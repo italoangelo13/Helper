@@ -1,0 +1,28 @@
+﻿.height-100 {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 999999;
+}
+
+.modalLoader {
+    background: rgba(255, 255, 255,0.8);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+}
+
+#text-loader{
+    font-size:20pt;
+
+}
+
+#spin-loader{
+    color:#055e0f;
+    font-size:150px;
+}
