@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B35DD18-F02C-443C-AD39-F85DA81C67D3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Helper</RootNamespace>
+    <AssemblyName>Helper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\Pacotes\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.HtmlEditor.Sanitizer">
+      <HintPath>..\Pacotes\AjaxControlToolkit.HtmlEditor.Sanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\Pacotes\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pacotes\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.14.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pacotes\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pacotes\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\bootstrap\css\.DS_Store" />
+    <Content Include="assets\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="assets\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="assets\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="assets\bootstrap\js\bootstrap.js.map" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="assets\DataTables\Bootstrap-4-4.1.1\css\bootstrap.css.map" />
+    <Content Include="assets\DataTables\Bootstrap-4-4.1.1\css\bootstrap.min.css.map" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\common.scss" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\mixins.scss" />
+    <Content Include="assets\fontello\config.json" />
+    <Content Include="assets\fontello\font\fontello.eot" />
+    <Content Include="assets\fontello\font\fontello.ttf" />
+    <Content Include="assets\fontello\font\fontello.woff" />
+    <Content Include="assets\fontello\font\fontello.woff2" />
+    <Content Include="assets\icheck\icheck-1.x\.gitignore" />
+    <Content Include="assets\icheck\icheck-1.x\bower.json" />
+    <Content Include="assets\icheck\icheck-1.x\CHANGELOG.md" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-bold.eot" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-bold.ttf" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-bold.woff" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-regular.eot" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-regular.ttf" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-regular.woff" />
+    <Content Include="assets\icheck\icheck-1.x\icheck.jquery.json" />
+    <Content Include="assets\icheck\icheck-1.x\README.md" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\.gitignore" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\bower.json" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\css\jquery-confirm.less" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\fonts\FontAwesome.otf" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\LICENSE" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\package.json" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\README.md" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\.gitignore" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\.jshintrc" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\.npmignore" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\bower.json" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\CONTRIBUTING.md" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\package.json" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\README.md" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\SECURITY.md" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-go\app.yaml" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-go\main.go" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-python\app.yaml" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\php\docker-compose.yml" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\php\Dockerfile" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\php\files\.gitignore" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\php\files\.htaccess" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\php\index.php" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\php\UploadHandler.php" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\VULNERABILITIES.md" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\.editorconfig" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\.gitignore" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\.jshintrc" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\.npmignore" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\.travis.yml" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\bower.json" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\LICENSE" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\package.json" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\README.md" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\.gitignore" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\.jshintrc" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\.travis.yml" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\bower.json" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\CHANGELOG.md" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\CONTRIBUTING.md" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\base.date.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\base.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\base.time.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\classic.date.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\classic.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\classic.time.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\default.date.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\default.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\default.time.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\rtl.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes-source\_variables.less" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\FORMATTING.md" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\NAMING.md" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\LICENSE.md" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\package.json" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\bootstrap\js\jquery-3.3.1.min.js" />
+    <Content Include="assets\DataTables\Bootstrap-4-4.1.1\css\bootstrap.css" />
+    <Content Include="assets\DataTables\Bootstrap-4-4.1.1\css\bootstrap.min.css" />
+    <Content Include="assets\DataTables\Bootstrap-4-4.1.1\js\bootstrap.js" />
+    <Content Include="assets\DataTables\Bootstrap-4-4.1.1\js\bootstrap.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.bootstrap.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.bootstrap.min.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.bootstrap4.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.bootstrap4.min.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.dataTables.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.dataTables.min.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.foundation.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.foundation.min.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.jqueryui.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.jqueryui.min.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.semanticui.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\css\buttons.semanticui.min.css" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.bootstrap.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.bootstrap.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.bootstrap4.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.bootstrap4.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.colVis.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.colVis.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.flash.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.flash.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.foundation.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.foundation.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.html5.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.html5.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.jqueryui.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.jqueryui.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.print.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.print.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.semanticui.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\buttons.semanticui.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\dataTables.buttons.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\js\dataTables.buttons.min.js" />
+    <Content Include="assets\DataTables\Buttons-1.5.4\swf\flashExport.swf" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="assets\DataTables\datatables.css" />
+    <Content Include="assets\DataTables\datatables.js" />
+    <Content Include="assets\DataTables\datatables.min.css" />
+    <Content Include="assets\DataTables\datatables.min.js" />
+    <Content Include="assets\DataTables\jQuery-3.3.1\jquery-3.3.1.js" />
+    <Content Include="assets\DataTables\jQuery-3.3.1\jquery-3.3.1.min.js" />
+    <Content Include="assets\fontello\css\animation.css" />
+    <Content Include="assets\fontello\css\fontello-codes.css" />
+    <Content Include="assets\fontello\css\fontello-embedded.css" />
+    <Content Include="assets\fontello\css\fontello-ie7-codes.css" />
+    <Content Include="assets\fontello\css\fontello-ie7.css" />
+    <Content Include="assets\fontello\css\fontello.css" />
+    <Content Include="assets\fontello\demo.html" />
+    <Content Include="assets\fontello\font\fontello.svg" />
+    <Content Include="assets\fontello\LICENSE.txt" />
+    <Content Include="assets\fontello\README.txt" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\banner.jpg" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\custom.css" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\icheck.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\arrow-bottom.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\arrow-top.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\header-line.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\icon-fork.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\icon-github.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\icon-lab.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\icon-options.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\ie\icon-star.png" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-bold.svg" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\montserrat-regular.svg" />
+    <Content Include="assets\icheck\icheck-1.x\demo\css\normalize.css" />
+    <Content Include="assets\icheck\icheck-1.x\demo\index.html" />
+    <Content Include="assets\icheck\icheck-1.x\demo\js\custom.min.js" />
+    <Content Include="assets\icheck\icheck-1.x\demo\js\jquery.js" />
+    <Content Include="assets\icheck\icheck-1.x\demo\js\zepto.js" />
+    <Content Include="assets\icheck\icheck-1.x\icheck.js" />
+    <Content Include="assets\icheck\icheck-1.x\icheck.min.js" />
+    <Content Include="assets\icheck\icheck-1.x\skins\all.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\aero%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\aero.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\aero.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\blue%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\blue.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\blue.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\flat%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\flat.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\flat.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\green%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\green.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\green.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\grey%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\grey.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\grey.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\orange%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\orange.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\orange.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\pink%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\pink.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\pink.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\purple%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\purple.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\purple.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\red%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\red.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\red.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\yellow%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\yellow.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\yellow.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\flat\_all.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\futurico\futurico%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\futurico\futurico.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\futurico\futurico.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\aero.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\blue.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\green.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\grey.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\line%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\line.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\line.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\orange.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\pink.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\purple.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\red.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\yellow.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\line\_all.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\aero%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\aero.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\aero.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\blue%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\blue.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\blue.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\green%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\green.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\green.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\grey%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\grey.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\grey.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\minimal%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\minimal.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\minimal.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\orange%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\orange.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\orange.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\pink%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\pink.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\pink.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\purple%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\purple.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\purple.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\red%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\red.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\red.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\yellow%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\yellow.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\yellow.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\minimal\_all.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\polaris\polaris%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\polaris\polaris.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\polaris\polaris.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\aero%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\aero.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\aero.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\blue%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\blue.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\blue.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\green%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\green.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\green.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\grey%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\grey.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\grey.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\orange%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\orange.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\orange.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\pink%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\pink.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\pink.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\purple%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\purple.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\purple.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\red%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\red.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\red.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\square%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\square.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\square.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\yellow%402x.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\yellow.css" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\yellow.png" />
+    <Content Include="assets\icheck\icheck-1.x\skins\square\_all.css" />
+    <Content Include="assets\imgs\logo.png" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\animations.html" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\callback.html" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\css\jquery-confirm.css" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\demo.css" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\demo.js" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\bundled.css" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\bundled.js" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\libs\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\demo\logo-name.svg" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\dist\jquery-confirm.min.css" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\dist\jquery-confirm.min.js" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\form.html" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\index.html" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\jquery-confirm.png" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\js\jquery-confirm.js" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\table.html" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\text.txt" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\themelayout.png" />
+    <Content Include="assets\jquery-confirm\jquery-confirm-master\themes.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\angularjs.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\basic-plus.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\basic.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\bower-version-update.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\cors\postmessage.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\cors\result.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\css\jquery-ui-demo-ie8.css" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\css\jquery-ui-demo.css" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\css\jquery.fileupload-noscript.css" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\css\jquery.fileupload-ui.css" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\css\jquery.fileupload.css" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\css\style.css" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\img\loading.gif" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\img\progressbar.gif" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\index.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\jquery-ui.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\app.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\cors\jquery.xdr-transport.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-angular.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-audio.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-image.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-jquery-ui.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-process.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-ui.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-validate.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload-video.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.fileupload.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\jquery.iframe-transport.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\main.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\js\vendor\jquery.ui.widget.js" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\LICENSE.txt" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-go\static\favicon.ico" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-go\static\robots.txt" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-python\main.py" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-python\static\favicon.ico" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\server\gae-python\static\robots.txt" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\test\index.html" />
+    <Content Include="assets\jQuery-File-Upload\jQuery-File-Upload-9.28.0\test\test.js" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\demo\demo.css" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\demo\index.html" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\dist\jquery.loading.css" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\dist\jquery.loading.js" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\dist\jquery.loading.min.css" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\dist\jquery.loading.min.js" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\Gruntfile.js" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\src\loading.css" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\src\loading.js" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\tests\unit-tests.html" />
+    <Content Include="assets\jquery-loading\jquery-loading-master\tests\unit-tests.js" />
+    <Content Include="assets\local\angular.min.js" />
+    <Content Include="assets\local\HelperStyle.css" />
+    <Content Include="assets\local\Loader.js" />
+    <Content Include="assets\local\Mensagem.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\Gruntfile.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\legacy.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\picker.date.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\picker.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\picker.time.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\themes\classic.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\themes\classic.date.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\themes\classic.time.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\themes\default.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\themes\default.date.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\themes\default.time.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\themes\rtl.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\ar.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\bg_BG.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\bs_BA.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\ca_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\cs_CZ.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\da_DK.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\de_DE.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\el_GR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\es_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\et_EE.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\eu_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\fa_IR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\fi_FI.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\fr_FR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\gl_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\he_IL.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\hi_IN.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\hr_HR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\hu_HU.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\id_ID.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\is_IS.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\it_IT.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\ja_JP.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\ko_KR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\lt_LT.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\lv_LV.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\nb_NO.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\ne_NP.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\nl_NL.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\no_NO.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\pl_PL.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\pt_BR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\pt_PT.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\ro_RO.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\ru_RU.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\sk_SK.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\sl_SI.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\sv_SE.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\th_TH.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\tr_TR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\uk_UA.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\vi_VN.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\zh_CN.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\compressed\translations\zh_TW.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\legacy.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\picker.date.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\picker.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\picker.time.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes\classic.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes\classic.date.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes\classic.time.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes\default.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes\default.date.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes\default.time.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\themes\rtl.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\ar.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\bg_BG.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\bs_BA.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\ca_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\cs_CZ.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\da_DK.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\de_DE.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\el_GR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\es_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\et_EE.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\eu_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\fa_IR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\fi_FI.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\fr_FR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\gl_ES.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\he_IL.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\hi_IN.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\hr_HR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\hu_HU.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\id_ID.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\is_IS.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\it_IT.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\ja_JP.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\ko_KR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\lt_LT.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\lv_LV.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\nb_NO.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\ne_NP.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\nl_NL.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\pl_PL.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\pt_BR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\pt_PT.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\ro_RO.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\ru_RU.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\sk_SK.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\sl_SI.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\sv_SE.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\th_TH.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\tr_TR.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\uk_UA.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\vi_VN.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\zh_CN.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\lib\translations\zh_TW.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\dev\date.htm" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\dev\time.htm" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\jquery.1.7.0.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\jquery.1.9.1.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\jquery.2.0.0.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\qunit.css" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\qunit.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\units\all.htm" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\units\base.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\units\date.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\units\time.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\version-bump.js" />
+    <Content Include="assets\pickadate.js\pickadate.js-3.5.6\version-commit.js" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="Services\Autenticacao.asmx" />
+    <Content Include="Services\Versao.asmx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BancoDados.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Autenticacao.asmx.cs">
+      <DependentUpon>Autenticacao.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\Versao.asmx.cs">
+      <DependentUpon>Versao.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58380</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

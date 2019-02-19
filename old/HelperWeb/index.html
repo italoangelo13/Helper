@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+</html>
+
+<head>
+    <title>SIGEM</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/fontello/css/animation.css" rel="stylesheet" />
+    <link href="assets/fontello/css/fontello.css" rel="stylesheet" />
+    <link href="assets/jquery-confirm/jquery-confirm-master/dist/jquery-confirm.min.css" rel="stylesheet" />
+    <link href="assets/jquery-loading/jquery-loading-master/dist/jquery.loading.min.css" rel="stylesheet" />
+    <link href="assets/local/HelperStyle.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+            min-height: 100%;
+        }
+
+        .wrapper {
+            height: 100%;
+            min-height: 100%;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        .container-fluid {
+            margin-top: 50px;
+            width: 400px;
+            /*padding: 40px;*/
+            border: 1px solid rgba(0, 0, 0, .3);
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, .5);
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body style="background: #fff">
+    <!--Modal Loading-->
+    <div id="modalLoader" class="height-100 modalLoader" style="display: none">
+        <div id="loader" align="center" style="margin-top: 13px; margin-bottom: 13px; ">
+            <i class="icone-spinner2 animate-spin" id="spin-loader"></i>
+            <br />
+            <span id="text-loader">Aguarde, Estamos Processando...</span>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img src="assets/imgs/logo.png" alt="Helper" width="100%">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label><i class="icone-user"></i>Usuario</label>
+                    <input type="text" id="_edUsuario" class="form-control form-control-lg text-uppercase" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label><i class="icone-lock"></i>Senha</label>
+                    <input type="password" id="_edSenha" class="form-control form-control-lg" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="btn btn-primary btn-block" onclick="AutenticarUsuario()"><i class="icone-monitor"></i>
+                        Acessar</div>
+
+                </div>
+            </div>
+            <div class="row alert-info">
+                <div class="col-lg-12 text-center">
+                    <span>Faria Soft</span>
+                    <br>
+                    <label class="text-muted">Versão 01.00.00</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery-confirm/jquery-confirm-master/dist/jquery-confirm.min.js"></script>
+    <script src="assets/local/Mensagem.js"></script>
+    <script src="assets/jquery-loading/jquery-loading-master/dist/jquery.loading.min.js"></script>
+    <script src="assets/local/Loader.js"></script>
+    <script>
+        function showLoad() {
+            $('#modalLoader').css('display', 'flex');
+            //$('body').loading({
+            //    overlay: $('#modalLoader')
+            //});
+        }
+
+
+        function hideLoader() {
+            $('#modalLoader').css('display', 'none');
+            //$('body').loading('stop');
+        }
+
+        function AutenticarUsuario() {
+            showLoad('Autenticando Usuario...');
+            //debugger;
+            //msg("Teste de Autenticação!");
+            var user = $('#_edUsuario').val();
+            var pass = $('#_edSenha').val();
+            if (user == "" || user == null) {
+                hideLoader();
+                msgAtencao("Campo Usuario é obrigatorio");
+                return;
+            }
+
+            if (pass == "" || pass == null) {
+                hideLoader();
+                msgAtencao("Campo Senha é obrigatorio");
+                return;
+            }
+
+            var obj = {
+                Usuario: user,
+                Senha: pass
+            };
+
+            var param = JSON.stringify(obj);
+            console.log(param);
+            
+            $.post("http://localhost:52602/api/autenticacao", param,
+                function (data) {
+                    var dados = JSON.parse(data);
+                    console.log(dados);
+                    hideLoad();
+               }
+            );
+        }
+    </script>
+</body>
+
+</html>
