@@ -602,6 +602,8 @@
     <Content Include="assets\pickadate.js\pickadate.js-3.5.6\tests\units\time.js" />
     <Content Include="assets\pickadate.js\pickadate.js-3.5.6\version-bump.js" />
     <Content Include="assets\pickadate.js\pickadate.js-3.5.6\version-commit.js" />
+    <Content Include="conteudo.html" />
+    <Content Include="Dashboard.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Services\Autenticacao.asmx" />
@@ -627,6 +629,7 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,8 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
-
-</html>
-
 <head>
     <title>Helper - Smart Help Desk</title>
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -111,6 +108,7 @@
 
 
         function retornaVersao() {
+            showLoad('');
             $.ajax({
                 url: "services/Versao.asmx/buscaVersao",
                 type: 'POST',
@@ -122,6 +120,7 @@
                     console.log(dados);
                     var versao = dados.replace('"', '').replace('"', '');
                     $('#versao').text(versao);
+                    hideLoad();
                 }
             });
         }
@@ -166,14 +165,17 @@
                     var auth = dados.Autenticado;
                     console.log(auth);
                     if (auth == false) {
-                        msgErro('Autenticação Invalida.');
+                        msgErro('Usuario não Autenticado.');
                     }
                     else {
-
+                        localStorage.setItem('usuario', dados.Usuario);
+                        localStorage.setItem('perfil', dados.Perfil);
+                        localStorage.setItem('id', dados.Id);
+                        localStorage.setItem('autenticado', true);
                     }
 
                     hideLoad();
-
+                    window.location.href = "Dashboard.html";
                 }
             });
         }

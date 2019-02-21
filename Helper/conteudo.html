@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Helper - Smart Help Desk</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/fontello/css/animation.css" rel="stylesheet" />
+    <link href="assets/fontello/css/fontello.css" rel="stylesheet" />
+    <link href="assets/jquery-confirm/jquery-confirm-master/dist/jquery-confirm.min.css" rel="stylesheet" />
+    <link href="assets/jquery-loading/jquery-loading-master/dist/jquery.loading.min.css" rel="stylesheet" />
+    <link href="assets/local/HelperStyle.css" rel="stylesheet" />
+    <style>
+        .bg-helper {
+            background: #61a375;
+        }
+
+        .dropdown-menu {
+            background: #b3e6c3;
+        }
+    </style>
+</head>
+
+<body style="background: #fff">
+    <!--Modal Loading-->
+    <div id="modalLoader" class="height-100 modalLoader" style="display: none">
+        <div id="loader" align="center" style="margin-top: 13px; margin-bottom: 13px; ">
+            <i class="icone-spinner2 animate-spin" id="spin-loader"></i>
+            <br />
+            <span id="text-loader">Aguarde, Estamos Processando...</span>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-xl-12" style="border-right:2px solid #61a375">
+                <div class="container">
+                    <div class="row">
+                        <div class="card bg-success text-white h-100 col-lg-12">
+                            <div class="card-body bg-success">
+                                <div class="rotate" style="font-size:100px;">
+                                    <i class="icone-chat"></i>
+                                </div>
+                                <h6 class="text-uppercase">Ticket's em Aberto</h6>
+                                <h1 class="display-4" id="QTAbertos">0</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery-confirm/jquery-confirm-master/dist/jquery-confirm.min.js"></script>
+    <script src="assets/local/Mensagem.js"></script>
+    <script src="assets/jquery-loading/jquery-loading-master/dist/jquery.loading.min.js"></script>
+    <script src="assets/local/Loader.js"></script>
+    <script>
+        // A $( document ).ready() block.
+        $(document).ready(function () {
+            atualizarInfoDashboard();
+            setInterval("atualizarInfoDashboard()", 60000)
+        });
+        
+
+        function atualizarInfoDashboard() {
+            var usuario = localStorage.getItem('usuario');
+            var codUsuario = localStorage.getItem('id');
+
+            var obj = {
+                CodUsuario: codUsuario,
+                Usuario : usuario
+            };
+
+
+            $.ajax({
+                url: "services/Versao.asmx/atualizaDashboard",
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(obj),
+                success: function (data) {
+                    var dados = data.d;
+                    var objRet = JSON.parse(dados);
+                    console.log(objRet);
+                    $("#QTAbertos").text(objRet.QTAbertos);
+                    
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
